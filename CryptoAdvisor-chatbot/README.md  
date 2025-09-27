@@ -1,0 +1,24 @@
+# CryptoBuddy - Rule-based Cryptocurrency Advisor Chatbot
+
+**Theme:** "Your First AI-Powered Financial Sidekick!" 🌟
+
+## What it is
+A beginner-friendly rule-based chatbot (Python) that analyzes a small, predefined cryptocurrency dataset and gives simple advice based on profitability (price trends, market cap) and sustainability (energy use, sustainability score).
+
+## Files
+- `cryptobuddy.py` — main chatbot script and demo run
+- `README.md` — this file
+- (Optional) Add screenshots and a 30s screen recording showcasing interaction for submission.
+
+## How to run
+1. Ensure Python 3 is installed.
+2. Run: `python3 cryptobuddy.py`
+3. The script prints a demo conversation. For interactive use, you can import `CryptoBuddy` and call `reply()`.
+
+## Notes & Stretch Goals
+- This bot is rule-based (if-else). No external API calls are used (stretch: integrate CoinGecko).
+- Add simple NLP (e.g., NLTK) for better intent parsing.
+- Ethics: Always include a disclaimer — crypto is risky.
+
+## 50-word summary (for submission)
+"CryptoBuddy uses rule-based logic to mimic basic AI decision-making: it maps user queries to intents (trend, sustainability, investment), scores coins by simple heuristics (trend, market cap, sustainability), and returns prioritized recommendations plus a safety disclaimer. It demonstrates data-driven decisions without ML com
