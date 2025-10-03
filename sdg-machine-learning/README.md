@@ -16,3 +16,4 @@ ThreadCycle classifies garment type and condition from a smartphone photo and re
 - src/: training and inference scripts
 - app/: demo app
 - assets/: sample images & screenshots
+cd 

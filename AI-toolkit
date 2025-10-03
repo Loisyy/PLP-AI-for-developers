@@ -1,0 +1,60 @@
+AI Tools Assignment — Mastering the AI Toolkit
+
+Team Members:
+
+Nkeiruka Soronnadi
+
+📘 Overview
+
+This project demonstrates our understanding of AI tools and frameworks — TensorFlow, PyTorch, Scikit-learn, and spaCy — through theory, implementation, and ethical reflection.
+
+🧩 Part 1: Theory
+
+We explored:
+
+The differences between TensorFlow, PyTorch, Scikit-learn, and spaCy.
+
+Real-world applications of these tools in industries such as healthcare, finance, and NLP.
+
+How different frameworks complement each other in AI workflows.
+
+📄 Full theoretical answers are included in the report (see /report/AI_Tools_Assignment.pdf).
+
+🤖 Part 2: Practical Implementation
+🧠 Task 1: Classical ML (Scikit-learn)
+
+Dataset: Iris Species
+
+Goal: Predict species using a Decision Tree Classifier.
+
+Metrics: Accuracy, Precision, Recall.
+
+Notebook: /notebooks/iris_decision_tree.ipynb
+
+🔢 Task 2: Deep Learning (TensorFlow/PyTorch)
+
+Dataset: MNIST handwritten digits.
+
+Goal: Build a CNN to classify digits (>95% accuracy).
+
+Notebook: /notebooks/mnist_cnn.ipynb
+
+Includes training curves and sample predictions.
+
+💬 Task 3: NLP (spaCy)
+
+Dataset: Amazon Product Reviews.
+
+Goal: Perform NER to extract product names/brands and analyze sentiment.
+
+Notebook: /notebooks/spacy_ner_sentiment.ipynb
+
+⚖️ Part 3: Ethics & Optimization
+
+We discussed:
+
+Biases in datasets (e.g., unbalanced data or subjective reviews).
+
+Use of TensorFlow Fairness Indicators and spaCy’s rule-based NLP to mitigate bias.
+
+Debugging and optimization techniques for TensorFlow scripts.
