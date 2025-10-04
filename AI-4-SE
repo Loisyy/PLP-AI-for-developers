@@ -1,0 +1,119 @@
+AI in Software Engineering — Building Intelligent Software Solutions
+
+Team Members:
+ Nkeiruka Soronnadi
+
+📘 Overview
+
+This project demonstrates how AI tools can enhance software engineering by automating coding tasks, improving testing, and supporting predictive analytics. Tools used include GitHub Copilot, Testim.io, Selenium, Scikit-learn, and Pandas.
+
+The project is divided into three main parts: theory, practical implementation, and ethical reflection.
+
+🧩 Part 1: Theoretical Analysis (30%)
+
+1. Short Answer Highlights
+
+AI-driven code completion (GitHub Copilot):
+Reduces development time by suggesting code snippets, auto-completing boilerplate code, and reducing repetitive tasks. Limitations: may produce incorrect code, requires review, may not handle complex logic.
+
+Supervised vs Unsupervised Learning in Bug Detection:
+
+Supervised: Detects bugs using labeled datasets.
+
+Unsupervised: Identifies anomalies in unlabeled code patterns.
+
+Bias Mitigation in UX Personalization:
+Ensures fair recommendations and prevents underrepresentation of user groups.
+
+2. Case Study Analysis
+
+AIOps in DevOps: Automates deployment pipelines to improve efficiency.
+
+Examples:
+
+Predicts failed builds before production.
+
+Allocates resources intelligently to prevent server overload.
+
+Full answers and screenshots included in the PDF report (/report/AI_Software_Assignment.pdf).
+
+🤖 Part 2: Practical Implementation (60%)
+Task 1: AI-Powered Code Completion
+
+Tool: GitHub Copilot / Tabnine
+
+Goal: Sort a list of dictionaries by a key
+
+Code snippets:
+
+# AI-generated
+sorted_list = sorted(list_of_dicts, key=lambda x: x['age'])
+
+# Manual implementation
+def sort_dicts(lst, key):
+    for i in range(len(lst)):
+        for j in range(i+1, len(lst)):
+            if lst[i][key] > lst[j][key]:
+                lst[i], lst[j] = lst[j], lst[i]
+    return lst
+
+
+Analysis: AI version is faster and more readable; manual version is instructive but slower.
+
+Task 2: Automated Testing with AI
+
+Framework: Selenium IDE with AI / Testim.io
+
+Goal: Automate login page tests
+
+Deliverables:
+
+Test script (/code/login_test.py)
+
+Screenshot of results (/images/login_test_results.png)
+
+Summary: AI improves test coverage by adapting to UI changes and reducing manual maintenance.
+
+Task 3: Predictive Analytics for Resource Allocation
+
+Dataset: Kaggle Breast Cancer Dataset
+
+Goal: Predict issue priority (high/medium/low)
+
+Deliverables:
+
+Jupyter Notebook (/notebooks/predictive_model.ipynb)
+
+Performance metrics: Accuracy = X%, F1-score = Y%
+
+Process: Preprocessing → Model training (Random Forest) → Evaluation
+
+⚖️ Part 3: Ethical Reflection (10%)
+
+Potential Biases: Underrepresented teams in historical datasets could skew predictions.
+
+Mitigation Tools: IBM AI Fairness 360 helps detect and correct bias in predictive models.
+
+🚀 Bonus Task: Innovation Challenge
+
+Proposed AI Tool: Automated Documentation Generator
+
+Purpose: Generates documentation from code and comments automatically.
+
+Workflow: Parse code → Summarize functions/classes → Output Markdown or PDF docs.
+
+Impact: Saves developer time, improves maintainability, ensures consistency.
+
+📎 Project Structure
+/AI_Software_Assignment
+│
+├─ /notebooks
+│   ├─ predictive_model.ipynb
+│   └─ ...
+├─ /code
+│   └─ login_test.py
+├─ /images
+│   └─ login_test_results.png
+├─ /report
+│   └─ AI_Software_Assignment.pdf
+└─ README.md
