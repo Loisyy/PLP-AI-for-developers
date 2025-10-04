@@ -1,0 +1,252 @@
+Understanding the AI Development Workflow
+
+Course: AI for Software Engineering
+Duration: 7 Days
+Total Points: 100
+
+👥 Group Members
+
+Nkeiruka Soronnadi
+
+🏁 Objective
+
+This project demonstrates a comprehensive understanding of the AI Development Workflow, covering every stage from problem definition to deployment.
+We apply this workflow to a real-world healthcare use case while addressing ethical, technical, and operational considerations.
+
+🧩 Part 1: Short Answer Questions (30 points)
+1. Problem Definition (6 pts)
+
+Hypothetical Problem: Predicting student dropout rates in online learning platforms.
+
+Objectives:
+
+Identify at-risk students early.
+
+Enable timely intervention through personalized learning plans.
+
+Improve overall student retention and completion rates.
+
+Stakeholders:
+
+School administrators
+
+Students and parents
+
+KPI:
+
+Dropout Prediction Accuracy (%): Measures how accurately the system identifies at-risk students.
+
+2. Data Collection & Preprocessing (8 pts)
+
+Data Sources:
+
+Learning management system (LMS) logs (attendance, grades, engagement time).
+
+Student demographics and performance records.
+
+Potential Bias:
+
+Socioeconomic bias — students with limited internet access or resources may be misclassified as low-performing.
+
+Preprocessing Steps:
+
+Handle missing data using mean/mode imputation.
+
+Normalize numerical features (e.g., time spent on platform).
+
+Encode categorical variables such as gender or study program using one-hot encoding.
+
+3. Model Development (8 pts)
+
+Model Chosen: Random Forest Classifier
+Justification:
+
+Handles both numerical and categorical data well.
+
+Reduces overfitting through ensemble learning.
+
+Offers feature importance insights.
+
+Data Split:
+
+70% training, 15% validation, 15% test.
+
+Hyperparameters to Tune:
+
+n_estimators – number of trees in the forest (controls variance).
+
+max_depth – limits tree depth to prevent overfitting.
+
+4. Evaluation & Deployment (8 pts)
+
+Evaluation Metrics:
+
+Accuracy: Measures the proportion of correct predictions.
+
+F1-Score: Balances precision and recall, especially useful for imbalanced data.
+
+Concept Drift:
+
+Occurs when data patterns change over time (e.g., new teaching methods).
+Monitoring Strategy:
+
+Set up automated retraining when performance drops below a set threshold.
+
+Deployment Challenge:
+
+Scalability: Handling a growing number of student data streams efficiently.
+
+🏥 Part 2: Case Study Application (40 points)
+Scenario:
+
+A hospital wants an AI system to predict patient readmission risk within 30 days of discharge.
+
+Problem Scope (5 pts)
+
+Problem Statement:
+Predict the likelihood of a patient being readmitted to the hospital within 30 days post-discharge.
+
+Objectives:
+
+Reduce readmission rates.
+
+Improve patient follow-up and care planning.
+
+Optimize resource allocation in the hospital.
+
+Stakeholders:
+
+Hospital management
+
+Doctors and nurses
+
+Patients
+
+Data Strategy (10 pts)
+
+Data Sources:
+
+Electronic Health Records (EHRs)
+
+Patient demographics and lab test results
+
+Ethical Concerns:
+
+Patient privacy (must comply with HIPAA).
+
+Potential bias against specific age, gender, or ethnic groups.
+
+Preprocessing Pipeline:
+
+Data Cleaning: Remove duplicate and incomplete patient entries.
+
+Feature Engineering: Create new features like “days since last visit” or “medication adherence score.”
+
+Normalization: Scale lab values to ensure uniform range across variables.
+
+Model Development (10 pts)
+
+Model: Logistic Regression
+Justification:
+
+Highly interpretable (important in healthcare).
+
+Performs well on binary classification tasks.
+
+Confusion Matrix (Hypothetical Example):
+
+	Predicted Readmit	Predicted Not Readmit
+Actual Readmit	80	20
+Actual Not Readmit	10	90
+
+Precision: 80 / (80 + 10) = 0.89
+Recall: 80 / (80 + 20) = 0.80
+
+Deployment (10 pts)
+
+Integration Steps:
+
+Convert trained model into an API using Flask/FastAPI.
+
+Connect the API to the hospital’s patient management system.
+
+Display risk predictions to doctors via dashboard.
+
+Regulatory Compliance:
+
+Encrypt all patient data in transit (SSL/TLS).
+
+Follow HIPAA guidelines for storage and sharing of medical data.
+
+Optimization (5 pts)
+
+Overfitting Solution:
+
+Apply Regularization (L2 penalty) and Cross-validation to ensure generalization.
+
+💭 Part 3: Critical Thinking (20 points)
+Ethics & Bias (10 pts)
+
+Impact of Bias:
+If the model is trained on data underrepresenting certain demographics, it may underpredict risks for those groups, leading to unequal care.
+
+Mitigation Strategy:
+
+Use balanced datasets and perform fairness audits regularly to detect biased patterns.
+
+Trade-offs (10 pts)
+
+Interpretability vs. Accuracy:
+
+Complex models like deep neural networks may achieve higher accuracy but are hard to interpret.
+
+In healthcare, interpretability is often prioritized to maintain transparency and trust.
+
+Limited Computational Resources:
+
+Prefer simpler models (e.g., Logistic Regression) that require less computation and are easier to maintain.
+
+🔄 Part 4: Reflection & Workflow Diagram (10 points)
+Reflection (5 pts)
+
+Most Challenging Part:
+
+Data preprocessing — ensuring data quality and removing bias required the most effort.
+
+Improvement Plan:
+
+With more time, we would collect more diverse data and test advanced models (e.g., XGBoost) for improved accuracy.
+
+Workflow Diagram (5 pts)
+        ┌────────────────────┐
+        │ Problem Definition │
+        └────────┬───────────┘
+                 ↓
+        ┌────────────────────┐
+        │ Data Collection &  │
+        │ Preprocessing      │
+        └────────┬───────────┘
+                 ↓
+        ┌────────────────────┐
+        │ Model Development  │
+        └────────┬───────────┘
+                 ↓
+        ┌────────────────────┐
+        │ Evaluation &       │
+        │ Validation         │
+        └────────┬───────────┘
+                 ↓
+        ┌────────────────────┐
+        │ Deployment &       │
+        │ Monitoring         │
+        └────────────────────┘
+
+📚 References
+
+IBM CRISP-DM Framework
+
+TensorFlow Documentation
+
+Scikit-learn API Guide
+
+HIPAA Privacy Rule Overview (U.S. Department of Health & Human Services)
