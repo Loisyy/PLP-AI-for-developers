@@ -1,0 +1,122 @@
+# 🌍 AI Ethics — *Designing Responsible and Fair AI Systems* ⚖️
+
+## 📖 Overview
+This project explores **ethical principles in Artificial Intelligence (AI)**, focusing on **fairness, transparency, accountability, and human rights**.  
+Through theory, case studies, and hands-on auditing using the **AI Fairness 360** toolkit, this assignment demonstrates how to design and evaluate AI systems that are **responsible, explainable, and human-centric**.
+
+---
+
+## 🧩 Part 1: Theoretical Understanding (30%)
+
+### **Q1: Algorithmic Bias**
+**Definition:**  
+Algorithmic bias occurs when an AI system produces unfair or prejudiced outcomes due to flaws in the training data, design, or assumptions.  
+
+**Examples:**
+1. **Hiring tools** rejecting women because historical hiring data favored men.  
+2. **Facial recognition** systems performing poorly on darker-skinned individuals due to unbalanced datasets.
+
+---
+
+### **Q2: Transparency vs Explainability**
+| Concept | Definition | Importance |
+|----------|-------------|-------------|
+| **Transparency** | The degree to which AI processes, models, and decisions are visible and understandable to stakeholders. | Builds trust and accountability. |
+| **Explainability** | The ability to describe **how** and **why** an AI model made a specific decision. | Helps users and regulators interpret AI outcomes. |
+
+**Why both matter:**  
+Transparency provides visibility into the system, while explainability provides comprehension. Both are vital for ethical governance and preventing misuse of AI decisions.
+
+---
+
+### **Q3: GDPR and Its Impact on AI**
+The **General Data Protection Regulation (GDPR)** governs personal data use in the EU.  
+It impacts AI development by enforcing:  
+- **Data minimization:** Use only necessary data for AI training.  
+- **Right to explanation:** Users can request explanations of automated decisions.  
+- **Accountability:** Organizations must prove data fairness and consent.  
+
+These measures ensure AI systems respect **privacy, consent, and human rights**.
+
+---
+
+### **Ethical Principles Matching**
+
+| Principle | Definition |
+|------------|-------------|
+| **A) Justice** | Fair distribution of AI benefits and risks. |
+| **B) Non-maleficence** | Ensuring AI does not harm individuals or society. |
+| **C) Autonomy** | Respecting users’ right to control their data and decisions. |
+| **D) Sustainability** | Designing AI to be environmentally friendly. |
+
+---
+
+## 🧠 Part 2: Case Study Analysis (40%)
+
+### **Case 1: Biased Hiring Tool — Amazon Example**
+**Scenario:**  
+Amazon’s AI recruiting tool penalized female candidates because the model was trained on data from a male-dominated workforce.
+
+**Source of Bias:**
+- Historical training data biased toward male applicants.  
+- Model learned gender-based patterns from resumes.
+
+**Fixes:**
+1. **Rebalance training data** to ensure gender representation.  
+2. **Remove gender proxies** (e.g., college names, pronouns).  
+3. **Introduce fairness constraints** in model training.
+
+**Fairness Metrics:**
+- Disparate Impact Ratio  
+- Equal Opportunity Difference  
+- Statistical Parity  
+
+---
+
+### **Case 2: Facial Recognition in Policing**
+**Scenario:**  
+Facial recognition systems have higher misidentification rates for minorities, leading to potential wrongful arrests.
+
+**Ethical Risks:**
+- Privacy invasion through constant surveillance.  
+- Discrimination and reinforcement of systemic bias.  
+- Erosion of public trust in law enforcement.
+
+**Recommendations:**
+1. Use **third-party bias audits** before deployment.  
+2. Enforce **strict data protection and consent policies**.  
+3. Limit usage to **verified and high-accuracy contexts**.  
+4. Implement **accountability frameworks** for misuse.
+
+---
+
+## 💻 Part 3: Practical Audit (25%)
+
+### **Goal:**  
+Audit the **COMPAS Recidivism Dataset** to identify racial bias in criminal risk predictions.
+
+**Tools:**  
+- Python  
+- AI Fairness 360 (IBM)  
+- Pandas  
+- Matplotlib  
+
+### **Sample Code:**
+```python
+from aif360.datasets import CompasDataset
+from aif360.metrics import BinaryLabelDatasetMetric, ClassificationMetric
+from aif360.algorithms.preprocessing import Reweighing
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+
+# Load COMPAS dataset
+dataset = CompasDataset()
+
+# Split by protected attribute (race)
+metric = BinaryLabelDatasetMetric(dataset, privileged_groups=[{'race': 1}], unprivileged_groups=[{'race': 0}])
+print("Disparate Impact:", metric.disparate_impact())
+
+# Apply reweighing to mitigate bias
+rw = Reweighing(unprivileged_groups=[{'race': 0}], privileged_groups=[{'race': 1}])
+dataset_transf = rw.fit_transform(dataset)
+
